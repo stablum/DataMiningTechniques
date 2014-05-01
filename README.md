@@ -1,7 +1,10 @@
-DataMiningTechniques
-====================
+# DataMiningTechniques
 
 Data Mining Techniques
+
+## Setup
+
+Python version 3 needs to be installed on the local system
 
 The following packages are required for running most the scripts:
 
@@ -9,7 +12,10 @@ The following packages are required for running most the scripts:
  * scipy
  * matplotlib
 
-In Ubuntu
----------
+### In Ubuntu
 
-    sudo apt-get install python-numpy python-scipy python-matplotlib
+    sudo apt-get install python3-numpy python3-scipy python3-matplotlib
+    
+## Running
+
+    python3 ./run.py ratiocharts
