@@ -21,8 +21,10 @@ the specific versions for Python version 3.
 
 ### In Windows
     
-    use a Python package manager, such as ``pip``. Maybe this tutorial can be helpful:
-        http://arunrocks.com/guide-to-install-python-or-pip-on-windows/
+Use a Python package manager, such as ``pip``. Maybe 
+[this tutorial](http://arunrocks.com/guide-to-install-python-or-pip-on-windows/)
+can be helpful.
+   
 
 ## Running
 
