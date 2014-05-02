@@ -21,10 +21,17 @@ the specific versions for Python version 3.
 
 ### In Windows
     
-Use a Python package manager, such as ``pip``. Maybe 
-[this tutorial](http://arunrocks.com/guide-to-install-python-or-pip-on-windows/)
-can be helpful.
-   
+    Since some additional packages are required, [Conda](http://conda.pydata.org/index.html) is a good choice helps to manage different version of python and packages easily. Installers can be found [here](http://conda.pydata.org/miniconda.html).
+    
+    After installation, use conda command to install these packages:
+    
+    * numpy
+    * matplotlib
+    * scipy
+    
+    Here's the command (It's in system command-line, not in python's):
+    
+    conda install numpy matplotlib scipy
 
 ## Running
 
