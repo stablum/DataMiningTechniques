@@ -12,10 +12,33 @@ The following packages are required for running most the scripts:
  * scipy
  * matplotlib
 
+If those packages are installed, then ``pylab`` will be available on the system. Remember to install
+the specific versions for Python version 3.
+
 ### In Ubuntu
 
     sudo apt-get install python3-numpy python3-scipy python3-matplotlib
+
+### In Windows
     
+Since some additional packages are required, [Conda](http://conda.pydata.org/index.html) is a good choice helps to manage different version of python and packages easily. Installers can be found [here](http://conda.pydata.org/miniconda.html).
+
+After installation, use conda command to install these packages:
+
+* numpy
+* matplotlib
+* scipy
+
+Here's the command (It's in system command-line, not in python's):
+    
+    conda install numpy matplotlib scipy
+
 ## Running
 
+### In Ubuntu
+
     python3 ./run.py ratiocharts
+
+### In Windows
+
+    python run.py ratiocharts
