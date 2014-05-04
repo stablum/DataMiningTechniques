@@ -37,8 +37,14 @@ Here's the command (It's in system command-line, not in python's):
 
 ### In Ubuntu
 
-    python3 ./run.py ratiocharts
+    python3 ./run.py <command>
 
 ### In Windows
 
-    python run.py ratiocharts
+    python run.py <command>
+
+Where ``<command>`` might be one of the following:
+
+* ``ratiocharts``, which creates pie plots
+* ``header``, which displays the dataset's fields
+* ``row <n>``, which displays the ``<n>``-th row
