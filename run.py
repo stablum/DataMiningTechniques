@@ -22,5 +22,20 @@ def main():
 		}
 		ratiocharts.plot_pie(testcounter, "testpie.png")
 
+	if cmd == "header":
+		reader = dataset_reader.create_default_reader()
+		print("dataset's fieldnames (header)")
+		print(reader.fieldnames)
+
+	if cmd == "row":
+		rownr = int(sys.argv[2])
+		reader = dataset_reader.create_default_reader()
+		i = 0
+		for row in reader:
+			i+=1
+			if i == rownr:
+				print(row)
+				break
+
 if __name__ == "__main__":
 	main()
