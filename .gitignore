@@ -54,3 +54,5 @@ docs/_build/
 
 data/*_set_VU_DM_2014.csv
 data/
+*.swp
+*.py~
