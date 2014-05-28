@@ -31,7 +31,7 @@ After installation, use conda command to install these packages:
 
 Here's the command (It's in system command-line, not in python's):
     
-    conda install numpy matplotlib scipy
+    conda install numpy matplotlib scipy pandas
 
 ## Running
 
