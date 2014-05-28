@@ -3,6 +3,7 @@ import numpy as np
 import sys
 import os
 import missing_data_detection
+import normalization
 
 # Read the filename of the raw training data
 print('PLZ input the filename of the raw data:')
@@ -15,6 +16,9 @@ data = pd.read_csv(infile)
 # detect attributes with missing data and add a new 1/0-valued attribute
 # which indicates if the attribute of reference is empty or not
 missing_data_detection.run(data)
+
+# add z-score attributes to all numerical attributes
+normalization.zscore_dataset(data)
 
 # Transform the date_time format so that pandas can recognize 
 data['date_time'] = pd.to_datetime(data['date_time'])
