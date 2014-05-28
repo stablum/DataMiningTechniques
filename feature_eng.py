@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import sys
 import os
+import missing_data_detection
 
 # Read the filename of the raw training data
 print('PLZ input the filename of the raw data:')
@@ -10,6 +11,10 @@ infile = infile.strip()
 
 # Read the raw training data
 data = pd.read_csv(infile)
+
+# detect attributes with missing data and add a new 1/0-valued attribute
+# which indicates if the attribute of reference is empty or not
+missing_data_detection.run(data)
 
 # Transform the date_time format so that pandas can recognize 
 data['date_time'] = pd.to_datetime(data['date_time'])
