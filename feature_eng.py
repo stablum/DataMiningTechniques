@@ -15,7 +15,7 @@ data = pd.read_csv(infile)
 
 # detect attributes with missing data and add a new 1/0-valued attribute
 # which indicates if the attribute of reference is empty or not
-missing_data_detection.run(data)
+#missing_data_detection.run(data)
 
 # add z-score attributes to all numerical attributes
 normalization.zscore_dataset(data)
