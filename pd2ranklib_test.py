@@ -27,14 +27,12 @@ data = data.fillna(data.mean())
 data['rel'] = 0
 
 # Translate the click and booking behaviour in to relvance values
-data.loc[data['click_bool'] == 1, 'rel'] = 1
-data.loc[data['booking_bool'] == 1, 'rel'] = 5
+#data.loc[data['click_bool'] == 1, 'rel'] = 1
+#data.loc[data['booking_bool'] == 1, 'rel'] = 5
 
 # Pick out the numerical features
 num_cols = data.columns.tolist()
 num_cols.remove('rel')
-num_cols.remove('booking_bool')
-num_cols.remove('click_bool')
 num_cols.remove('srch_id')
 
 # Going to use to_string() to transform the data into RankLib style
