@@ -26,9 +26,18 @@ outfile_flist = os.path.splitext(infile)[0] + '_featurelist.txt'
 print("will be:",outfile_flist)
 
 # Read the raw training data
-print("reading input raw training data...")
-data = pd.read_csv(infile)
+print("creating reader on input file...")
+reader = pd.read_csv(infile, iterator=True, chunksize=10000)
 print("done.")
+
+i = 0
+data = None
+print("adding chunks:")
+for chunk in reader:
+    data = pd.concat([data,chunk])
+    print(i,end=" ",flush=True)
+    i+=1
+print("done adding chunks.")
 
 # Save the data with new features
 # detect attributes with missing data and add a new 1/0-valued attribute
