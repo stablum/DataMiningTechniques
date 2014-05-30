@@ -18,7 +18,7 @@ data = pd.read_csv(infile)
 #missing_data_detection.run(data)
 
 # add z-score attributes to all numerical attributes
-normalization.zscore_dataset(data)
+#normalization.zscore_dataset(data)
 
 # Transform the date_time format so that pandas can recognize 
 data['date_time'] = pd.to_datetime(data['date_time'])
