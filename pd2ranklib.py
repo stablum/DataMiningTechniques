@@ -35,6 +35,7 @@ num_cols = data.columns.tolist()
 num_cols.remove('rel')
 num_cols.remove('booking_bool')
 num_cols.remove('click_bool')
+num_cols.remove('gross_bookings_usd')
 num_cols.remove('srch_id')
 
 # Going to use to_string() to transform the data into RankLib style
