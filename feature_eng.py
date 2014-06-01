@@ -4,6 +4,7 @@ import sys
 import os
 import missing_data_detection
 import normalization
+import math
 
 # Read the filename of the raw training data
 if len(sys.argv) < 2:
@@ -59,6 +60,20 @@ data['day'] = [t.day for t in date_time]
 print("done. extracting time_in_second...")
 data['time_in_second'] = [t.hour * 3600 + t.minute * 60 + t.second for t in date_time]
 print("done.")
+
+# Historical price
+#print('extrating historical price')
+#log_price = data['prop_log_historical_price']
+#data['prop_historical_price'] = [math.exp(lp) for lp in log_price]
+#data['prop_diff_price'] = data['prop_historical_price'] - data['price_usd']
+#data['discount_rate'] = data['prop_diff_price'] / data['prop_historical_price']
+#print('done.')
+
+# Fill in NA with the first 4th quantile
+data.fillna(data.quantile(0.25))
+
+# Price rank
+
 
 print("saving data to csv...")
 data.to_csv(outfile_data, index = False)
