@@ -11,7 +11,9 @@ def main():
 		infile = sys.argv[1]
 	
 	outfile_positive = infile.replace(".csv","_featureranking_positive.csv")
+	outfile_positive = outfile_positive.replace(".txt","_featureranking_positive.csv")
 	outfile_negative = infile.replace(".csv","_featureranking_negative.csv")
+	outfile_negative = outfile_negative.replace(".txt","_featureranking_negative.csv")
 	print("outfile_positive",outfile_positive)
 	print("outfile_negative",outfile_negative)
 	chunksize = 10000
