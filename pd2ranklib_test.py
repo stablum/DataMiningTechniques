@@ -21,7 +21,7 @@ features = pd.read_csv(featurefilename).columns.tolist()
 data = data[features]
 
 # Fill out the missing value with mean value
-data = data.fillna(data.mean())
+data = data.fillna(data.quantile(0.25))
 
 # Add a new column for relevance value, which is required by RankLib
 data['rel'] = 0
@@ -67,10 +67,10 @@ outfilename = datafilename.replace('_newfeature.txt', '_ranklib.txt')
 f = open(outfilename, 'w')
 f.close()
 
-for i in range(0, int(length / 10000)):
+for i in range(0, int(length / 100000)):
 
 	# Write the data to string buffer
-	buf = data[i * 10000 : (i + 1) * 10000].to_string(columns = all_cols, formatters = formats_dict, index = False, header = False)
+	buf = data[i * 100000 : (i + 1) * 100000].to_string(columns = all_cols, formatters = formats_dict, index = False, header = False)
 
 	# Strip extra spaces
 	buf = re.sub(' +', ' ', buf)

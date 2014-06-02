@@ -21,7 +21,7 @@ features = pd.read_csv(featurefilename).columns.tolist()
 data = data[features]
 
 # Fill out the missing value with mean value
-#data = data.fillna(data.mean())
+data = data.fillna(data.quantile(0.25))
 
 # Add a new column for relevance value, which is required by RankLib
 data['rel'] = 0
